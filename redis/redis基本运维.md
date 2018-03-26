@@ -320,7 +320,8 @@ redis-cli连接上以后，可以执行以下操作：
 
 ```
 1	BGREWRITEAOF 
-异步执行一个 AOF（AppendOnly File） 文件重写操作
+对 AOF 文件进行重建（rebuild），异步的执行重建。
+执行 BGREWRITEAOF 命令， Redis 将生成一个新的 AOF 文件， 这个文件包含重建当前数据集所需的最少命令。
 2	BGSAVE 
 在后台异步保存当前数据库的数据到磁盘
 3	CLIENT KILL [ip:port] [ID client-id] 
